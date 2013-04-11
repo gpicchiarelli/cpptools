@@ -1,3 +1,5 @@
+Giacomo Picchiarelli <gpicchiarelli@gmail.com>
+
 cpptools
 ========
 
