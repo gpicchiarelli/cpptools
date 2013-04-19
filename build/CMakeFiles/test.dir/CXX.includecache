@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
+/home/giacomo/sviluppo/cpptools/include/gbtree.hpp
+stdio.h
+-
+
 /home/giacomo/sviluppo/cpptools/test.cpp
-include/tree.hpp
-/home/giacomo/sviluppo/cpptools/include/tree.hpp
+include/gbtree.hpp
+/home/giacomo/sviluppo/cpptools/include/gbtree.hpp
+iostream
+-
 

@@ -17,9 +17,23 @@ License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "include/gbtree.hpp"
 #include <iostream>
-using namespace std;
 
+using namespace std;
+using namespace gcpptools;
 int main(){
 	cout << "test" << endl;
+	
+	gbtree<double>* t = new gbtree<double>();
+	
+	for(int i = 0; i< 300 ; i++)
+		{t->add(i); t->add(i/2);}
+	
+	node<double>* nn = t->search(199);
+	cout << t->elements << endl;
+	node<double>* nnn = nn->left;
+	if (nnn != NULL){
+		cout << nnn->key << endl;
+	}
+	
 	return 0;
 } 

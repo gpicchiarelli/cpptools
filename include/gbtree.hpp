@@ -40,6 +40,7 @@ namespace gcpptools{
         void add(T key);
         node<T> *search(T key);
         void destroy_gbtree();
+        int elements;
 
     private:
         void destroy_tree(node<T> *leaf);
@@ -74,36 +75,37 @@ namespace gcpptools{
 		destroy_tree(leaf->left);
 		destroy_tree(leaf->right);
 		delete leaf;
+		elements = 0;
 	  }
 	}		
 
 	template<typename T>
 	void gbtree<T>::add(T key, node<T> *leaf)
 	{
-	  if(key < leaf->key_value)
+	  if(key < leaf->key)
 	  {
 		if(leaf->left!=NULL)
 		 add(key, leaf->left);
 		else
 		{
 		  leaf->left=new node<T>();
-		  leaf->left->key_value=key;
+		  leaf->left->key=key;
 		  leaf->left->left=NULL;   
 		  leaf->left->right=NULL;
 		}  
 	  }
-	  else if(key >= leaf->key_value)
+	  else if(key >= leaf->key)
 	  {
 		if(leaf->right!=NULL)
 		  add(key, leaf->right);
 		else
 		{
 		  leaf->right=new node<T>();
-		  leaf->right->key_value=key;
+		  leaf->right->key=key;
 		  leaf->right->left=NULL;  
 		  leaf->right->right=NULL;
 		}
-	  }
+	  }	  
 	}
 
 	template <typename T>
@@ -111,9 +113,9 @@ namespace gcpptools{
 	{
 	  if(leaf!=NULL)
 	  {
-		if(key==leaf->key_value)
+		if(key==leaf->key)
 		  return leaf;
-		if(key<leaf->key_value)
+		if(key<leaf->key)
 		  return search(key, leaf->left);
 		else
 		  return search(key, leaf->right);
@@ -124,12 +126,13 @@ namespace gcpptools{
 	template<typename T>
 	void gbtree<T>::add(T key)
 	{
+	elements++;
 	  if(root!=NULL)
 		add(key, root);
 	  else
 	  {
 		root=new node<T>();
-		root->key_value=key;
+		root->key=key;
 		root->left=NULL;
 		root->right=NULL;
 	  }
