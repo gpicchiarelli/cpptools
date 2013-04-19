@@ -1,8 +1,8 @@
- 
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
 
-PROJECT(cpptools C)
+PROJECT(cpptools C CXX)
 
-ADD_DEFINITIONS(-g -O3 -fsigned-char -freg-struct-return -Wall -W -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Winline -Werror)
+ADD_DEFINITIONS(-g -O3 -Wall)
 
-ADD_EXECUTABLE(cpptools.so main.c)
+add_executable (test test.cpp)
+

@@ -15,15 +15,11 @@ You should have received a copy of the GNU Lesser General Public
 License along with this library.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-//* A generic binary tree *//
-
+#include "include/gbtree.hpp"
+#include <iostream>
 using namespace std;
 
-namespace gcpptools{
-	template <typename T> struct node
-	{
-		T key;
-		node *left;
-		node *right;
-	}	
-}
+int main(){
+	cout << "test" << endl;
+	return 0;
+} 
